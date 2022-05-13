@@ -21,7 +21,7 @@ let side = {
 let jump = true;
 
 if (windowWidth > windowHeight && windowHeight - 700 > jumpWidth) { 
-    runRabbid();
+    window.addEventListener(`DOMContentLoaded`, runRabbid);
 }
 
 function runRabbid() {
@@ -127,12 +127,23 @@ function showContacts(e) {
     let gmail = createElem(`button`, [`contact`, `mail`], `.contacts`, ``, `l`, showText);
     gitHub.setAttribute(`href`, `https://github.com/rabbid777/reaction-time-game`);
 
-    gitHub.innerHTML = `<img class = 'icon' src = 'img/githubwhite.png' alt = 'GitHub'>`;
-    telegram.innerHTML = `<img class = 'icon' src = 'img/telegramwhite.png' alt = 'Telegram'>`;
-    gmail.innerHTML = `<img class = 'icon' src = 'img/mailwhite.png' alt = 'Gmail'>`;
+    gitHub.innerHTML = `<img class = 'icon' src = 'img/github-icon.png' alt = 'GitHub'>`;
+    telegram.innerHTML = `<img class = 'icon' src = 'img/telegram-icon.png' alt = 'Telegram'>`;
+    gmail.innerHTML = `<img class = 'icon' src = 'img/email-icon.png' alt = 'Gmail'>`;
 }
 
 function showText(e) {
     if (this.classList.contains(`telegram`)) (document.querySelector(`.text-t`)).classList.toggle(`show-text`);
     else document.querySelector(`.text-g`).classList.toggle(`show-text`);
+}
+
+function createElem(elem, classNames, parentClassName, text, index, func) {
+    let item = document.createElement(elem);
+    classNames.forEach( className => item.classList.add(className));
+    item.textContent = text;
+    item.setAttribute(`style`, `grid-area: ${classNames[0][0] + index}`);
+    if (elem === `button`) item.addEventListener(`click`, func);
+    document.querySelector(parentClassName).appendChild(item);
+
+    return item;
 }
