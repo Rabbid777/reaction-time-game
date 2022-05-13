@@ -5,6 +5,7 @@ let times = [];
 let misses = 0;
 
 document.querySelector(`#start`).addEventListener(`click`,startGame);
+window.addEventListener(`blur`,() => { location.reload();});
 
 //Igra
 function startGame() {

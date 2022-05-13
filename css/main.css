@@ -34,7 +34,7 @@ div {
   display: none;
   color: #fafae3;
   position: absolute;
-  font-size: 10vh;
+  font-size: 10vw;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -54,6 +54,8 @@ div {
 #start {
   width: 20%;
   height: 20%;
+  text-align: center;
+  padding: 2px;
   border-radius: 50px;
   color: rgb(234, 255, 245);
   background-color: rgb(161, 196, 212);
@@ -62,10 +64,10 @@ div {
 
 #logo {
   align-items: end;
-  font-size: 5vh;
+  font-size: 3vw;
 }
 
 #full-info {
-  font-size: 2vh;
+  font-size: 1.5vw;
   place-items: start start;
 }
