@@ -20,7 +20,8 @@ let side = {
 }
 let jump = true;
 
-if (windowWidth > windowHeight && windowHeight - 700 > jumpWidth) { 
+//&& windowHeight - 700 > jumpWidth ??
+if (windowWidth > windowHeight) { 
     window.addEventListener(`DOMContentLoaded`, runRabbid);
 }
 
