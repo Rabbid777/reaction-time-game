@@ -31,7 +31,6 @@ div {
 }
 
 #reaction-time {
-  display: none;
   color: #fafae3;
   position: absolute;
   font-size: 10vw;
@@ -70,4 +69,8 @@ div {
 #full-info {
   font-size: 1vw;
   place-items: start start;
+}
+
+.hide {
+  display: none;
 }

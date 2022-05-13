@@ -10,12 +10,9 @@ window.addEventListener(`blur`,() => { location.reload();});
 //Igra
 function startGame() {
   updateStatistics();
-  this.setAttribute(`style`, `display:none`);
   document.querySelector(`#logo`).textContent = `Rabid Rabbits Tea Time`;
-  document.querySelector(`#reaction-time`).textContent = 0;
-  document
-    .querySelector(`#reaction-time`)
-    .setAttribute(`style`, `display:inline`);
+  this.classList.toggle(`hide`);
+  document.querySelector(`#reaction-time`).classList.toggle(`hide`);
   let gameTimer = setInterval(createTarget, targetTime);
   setTimeout(finishGame, gameTime, gameTimer);
 }
@@ -91,8 +88,9 @@ function finishGame(gameTimer) {
 }
 
 function resetInfo() {
-  document.querySelector(`#start`).setAttribute(`style`, `display:inherit`);
-  document.querySelector(`#reaction-time`).setAttribute(`style`, `display:none`);
+  document.querySelector(`#start`).classList.toggle(`hide`);
+  document.querySelector(`#reaction-time`).textContent = 0;
+  document.querySelector(`#reaction-time`).classList.toggle(`hide`);
   misses = 0;
   times.length = 0;
 }
